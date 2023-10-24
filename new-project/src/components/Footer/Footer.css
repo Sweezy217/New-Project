@@ -1,0 +1,37 @@
+footer {
+    height: 34vh;
+    background-color: black;
+}
+
+footer h1 {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    color: #ffffffe0;
+}
+
+.follow {
+    height: 85%;
+}
+
+.reserve {
+    padding: 10px 15px;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d4d4d4;
+}
+
+.reserve a {
+    text-decoration: none;
+    color: #000;
+}
+
+.reserve a:hover {
+    text-decoration: underline;
+}
+.icons {
+    padding: 20px;
+    text-align: center;
+}

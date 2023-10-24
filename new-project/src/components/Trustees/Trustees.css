@@ -1,0 +1,88 @@
+.trustees {
+  background-color: #f1f1f1;
+  padding: 0 10px;
+  padding-bottom: 50px;
+}
+
+.people {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.title-text {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.people div {
+  box-shadow: 1px 3px 5px gray;
+  margin: 0 10px;
+  border-radius: 10px;
+}
+
+.people div img {
+  border-radius: 10px;
+}
+
+.people div h4 {
+  padding: 0 10px;
+  margin: 10px 0;
+  font-size: 30px;
+}
+.people div p {
+  padding: 0 10px;
+  margin: 10px 0;
+  opacity: 80%;
+  font-size: 20px;
+}
+.people div span {
+  display: block;
+  padding: 0 10px;
+  margin: 10px 0;
+}
+
+@media (max-width: 720px) {
+  .people {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .people div img {
+    height: max-content;
+   }
+  .people div {
+    margin-bottom: 20px;
+    width: 90%;
+  }
+  .title-text h1 {
+    font-size: 30px !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .people div img {
+   height: max-content;
+  }
+  .people div h4 {
+    font-size: 20px;
+  }
+
+  .people div p {
+    padding: 0 10px;
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  .people div span {
+    font-size: 15px;
+  }
+
+  .people div {
+    width: 90%;
+  }
+}

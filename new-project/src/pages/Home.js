@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import NavbarHome from "../components/NavbarHome/NavbarHome";
+import AboutUs from "../components/AboutUs/AboutUs";
+import Trustees from "../components/Trustees/Trustees";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <NavbarHome />
+      <AboutUs />
+      <Trustees />
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&family=Inter:wght@300;400;500;600;700;800&family=Italianno&family=M+PLUS+1:wght@400;500&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Orbitron:wght@400;500;600&family=Oswald:wght@300;400&family=Pacifico&family=Quicksand:wght@300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,700&display=swap");
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px !important;
+  background: plum;
+  box-shadow: 2px 4px 6px gray;
+}
+
+h1 {
+  /* border: 1px solid red; */
+  display: flex;
+  font-family: "Pacifico", cursive;
+  font-size: 40px;
+  color: #383838;
+  align-items: center;
+}
+
+@media (max-width: 668px) {
+  .h1 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 490px) {
+  .h1 {
+    font-size: 17px;
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .h1 {
+    display: none;
+  }
+}

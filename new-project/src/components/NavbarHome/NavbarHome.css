@@ -1,6 +1,6 @@
 .navbar {
   display: flex;
-  position: fixed;
+  position: fixed !important;
   top: 0;
   z-index: 10;
   width: 100%;
@@ -11,7 +11,8 @@
   box-shadow: 2px 4px 6px gray;
 }
 
-.link-holder {
+.link-holder,
+.link-holder-one {
   display: flex;
   justify-content: space-between;
   font-size: 20px;
@@ -61,4 +62,83 @@
   .link-holder {
     display: none;
   }
+}
+
+/* ////////////////////////////////////////////////////////////// */
+
+.setting-dropdown {
+  box-shadow: 1px 3px 5px gray;
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 30px;
+  left: 0;
+  /* border:  1px solid red ; */
+  height: 100vh;
+  width: 300px;
+  background-color: rgb(0, 0, 0);
+}
+
+.setting-dropdown button {
+  transition: 1s;
+  /* border: 1px solid blue; */
+  display: block;
+  color: #fff;
+  margin-bottom: 7px;
+  background: transparent;
+  width: 90%;
+  font-size: 20px;
+  padding: 10px 10px;
+  text-align: left;
+}
+
+.setting-dropdown button:hover {
+  opacity: 80%;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.setting-dropdown p {
+  /* border: 1px solid green; */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin: 0 0 30px 0;
+  padding: 0 10px;
+  text-align: left;
+  color: #fff;
+}
+
+/* //////////////////////////////////////////// */
+
+.link-holder-one {
+  width: 100%;
+  /* justify-content: left; */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.link-1 {
+  width: 90%;
+  /* border: 1px solid red; */
+  color: #fff;
+  display: block;
+  margin-bottom: 7px;
+  background: transparent;
+  width: 90%;
+  font-size: 20px;
+  padding: 10px 0;
+  text-align: left;
 }

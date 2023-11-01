@@ -6,22 +6,41 @@ import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState();
+  // const [name, setName] = useState("");
   const [password, setPassword] = useState();
+  const [passwordTrue, setPasswordTrue] = useState(false);
   const nav = useNavigate();
 
+  // useEffect(() => {
+  //   async function getUsers() {
+  //     try {
+  //       const usersData = await axios.get("http://localhost:3001/getUsers");
+  //       setUsers(usersData.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   getUsers();
+  // }, []);
 
-  console.log(email, password)
-  
-  
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // users.filter((user) => {
+    //   if (user.email === email) {
+    //     console.log(user.name)
+    //     // setName(user.name);
+    //   }
+    // });
     axios
       .post("http://localhost:3001/login", { email, password })
       .then((result) => {
-        if (result.data === "Correct") {
+        if (result.data.authenticated) {
+          localStorage.setItem("AuthUser", JSON.stringify(result.data.user));
           nav("/");
+          window.location.reload();
         } else {
-          alert(result.data);
+          setPasswordTrue(true);
         }
       })
       .catch((error) => {
@@ -61,15 +80,22 @@ const Login = () => {
                 name="password"
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {
+                <span style={{ color: "red", fontSize: "13px", margin: "0" }}>
+                  {passwordTrue ? "Password is Incorrect" : ""}
+                </span>
+              }
             </div>
 
             {/* /////////PASSWORD/////////////// */}
             <button>Login</button>
           </form>
-          <p>Do not Have an Account</p>
-          <Link to="/signup" className="btn-login">
-            Sign Up
-          </Link>
+          <p>
+            Do not Have an Account
+            <Link to="/signup" className="btn-login">
+              Sign Up
+            </Link>
+          </p>
         </div>
       </div>
     </>

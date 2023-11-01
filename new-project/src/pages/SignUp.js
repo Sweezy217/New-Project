@@ -13,13 +13,17 @@ const SignUp = () => {
   const nav = useNavigate();
   const [users, setUsers] = useState([]);
 
+  // let login = localStorage.getItem("AuthUser");
+  // const user = JSON.parse(login);
+  // console.log(user)
+
   useEffect(() => {
     axios
       .get("http://localhost:3001/getUsers")
       .then((users) => setUsers(users.data))
       .catch((err) => console.log(err));
   }, []);
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -28,11 +32,13 @@ const SignUp = () => {
       return setCapitalLetter(true);
     }
 
-    users.filter((user) => {
-      if (user.email === email) {
-        setUserExists(true);
-      }
-    });
+    if (users.length > 0) {
+      users.filter((user) => {
+        if (user.email === email) {
+          setUserExists(true);
+        }
+      });
+    }
 
     if (!email.includes(".")) {
       alert("Email must contain a dot ( . )");
@@ -41,7 +47,6 @@ const SignUp = () => {
     axios
       .post("http://localhost:3001/register", { name, email, password })
       .then((result) => {
-        console.log(result.data);
         nav("/login");
       })
       .catch((error) => {
@@ -119,10 +124,12 @@ const SignUp = () => {
             {/* /////////PASSWORD/////////////// */}
             <button>Sign In</button>
           </form>
-          <p>Already Have an Account</p>
-          <Link to="/login" className="btn-login">
-            Login
-          </Link>
+          <p>
+            Already Have an Account{" "}
+            <Link to="/login" className="btn-login">
+              Login
+            </Link>
+          </p>
         </div>
       </div>
     </div>

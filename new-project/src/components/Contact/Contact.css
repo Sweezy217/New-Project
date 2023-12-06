@@ -58,7 +58,10 @@ textarea  {
   margin: 10px 0 !important;
   width: 100%;
   padding: 15px;
-  resize: none;
+}
+
+.textarea {
+  resize: none !important;
 }
 
 input:focus,

@@ -7,8 +7,7 @@ import Footer from "../components/Footer/Footer";
 
 const Home = () => {
   let login = localStorage.getItem("AuthUser");
-  // let logged = JSON.parse(login)
-// console.log(JSON.parse(login))
+
   return (
     <div>
       <NavbarHome />

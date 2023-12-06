@@ -23,7 +23,7 @@ const SignUp = () => {
       .then((users) => setUsers(users.data))
       .catch((err) => console.log(err));
   }, []);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -32,17 +32,17 @@ const SignUp = () => {
       return setCapitalLetter(true);
     }
 
+    if (!email.includes(".")) {
+      alert("Email must contain a dot ( . )");
+      return;
+    }
+
     if (users.length > 0) {
       users.filter((user) => {
         if (user.email === email) {
           setUserExists(true);
         }
       });
-    }
-
-    if (!email.includes(".")) {
-      alert("Email must contain a dot ( . )");
-      return;
     }
     axios
       .post("http://localhost:3001/register", { name, email, password })

@@ -18,7 +18,6 @@ const style = {
 };
 
 export default function BasicModal(props) {
-  console.log(props.data);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);

@@ -1,16 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 const cors = require("cors");
 const UserModel = require("./models/user");
 const bcrypt = require("bcrypt");
-
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect(
-  "mongodb+srv://siphomkhize8705:sipho2002@cluster0.fxycyto.mongodb.net/?retryWrites=true&w=majority"
-);
+mongoose.connect(process.env.REACT_APP_DATABASE);
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   UserModel.findOne({ email: email }).then((user) => {
@@ -51,14 +49,17 @@ app.post("/register", (req, res) => {
 app.post("/updateUser", async (req, res) => {
   const { id, name } = req.body;
   try {
-    await UserModel.updateOne({_id: id}, {
-      $set: {
-        name: name
+    await UserModel.updateOne(
+      { _id: id },
+      {
+        $set: {
+          name: name,
+        },
       }
-    })
-    return res.json({ status: "ok", data: "updated"})
+    );
+    return res.json({ status: "ok", data: "updated" });
   } catch (error) {
-    return res.json({status: error, data: error})
+    return res.json({ status: error, data: error });
   }
 });
 
@@ -70,6 +71,6 @@ app.get("/getUsers", (req, res) => {
     .catch((err) => res.json(err));
 });
 
-app.listen(3001, () => {
+app.listen(process.env.REACT_APP_URL, () => {
   console.log("server is running successfully");
 });

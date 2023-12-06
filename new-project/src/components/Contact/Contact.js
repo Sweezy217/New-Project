@@ -67,6 +67,7 @@ const Contact = () => {
             required
           />
           <textarea
+          className="textarea"
             name="message"
             min="10"
             id=""

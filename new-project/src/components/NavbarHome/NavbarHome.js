@@ -55,6 +55,8 @@ const NavbarHome = () => {
       <button style={{ width: "70px" }} className="setting" onClick={showMenu}>
         <SettingsIcon />
       </button>
+
+      {/* //////////////////////MENU///////////////////////// */}
       <div className="setting-dropdown">
         <CloseIcon className="close" onClick={showMenu} />
         <p>
@@ -64,7 +66,7 @@ const NavbarHome = () => {
           {userIn}
           <BasicModal data={user}/>
         </p>
-        {/* <button>Dark-Mode</button> */}
+        <button>Dark-Mode</button>
         <div className="link-holder-one">
           <Link className="link-1" to="#about" onClick={showMenu}>
             About Us
@@ -76,14 +78,17 @@ const NavbarHome = () => {
             Contact
           </Link>
         </div>
-        {/* <button>Delete Account</button> */}
+        <button>Delete Account</button>
         <button onClick={logOut}>
           <LogoutIcon /> LogOut
         </button>
       </div>
+            {/* //////////////////////MENU END///////////////////////// */}
+                  {/* //////////////////////RESPONSIVE MENU///////////////////////// */}
       <button className="menu" onClick={showMenu}>
         <MenuIcon />
       </button>
+            {/* //////////////////////RESPONSIVE MENU END///////////////////////// */}
     </nav>
   );
 };
